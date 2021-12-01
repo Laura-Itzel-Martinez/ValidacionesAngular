@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col mt-4">
           <h1>{{title}}</h1>
-          <table class="table table-bordered" *ngIf="hayRegistros(); else sinarticulos">
+          <table class="table table-bordered" >
             <thead style="background-color:#f47e8e;">
               <th>ID</th>
               <th>Nombre</th>
@@ -33,30 +33,33 @@
               </tr>
             </tbody>
           </table>
-          <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>
         </div>
       </div>
       <!-- formulario -->  
       <hr>
-      <div class="row">
-        <div class="col">
-          <label for="id">ID: </label>
-          <br>
-          <input type="number" class="form-control" [(ngModel)]="formulario.id" required >
-          <br>
-          <label for="Nombre">Nombre: </label>
-          <br>
-          <input type="text" class="form-control"  [(ngModel)]="formulario.nombre"required>
-          <br>
-          <label for="Precio">Precio:  </label>
-          <br>
-          <input type="number" class="form-control" [(ngModel)]="formulario.precio" required>
-          <br>
-          <br>
-          <button class="btn btn-warning" (click)="agregar()">Agregar</button>
-          <button class="btn btn-info" (click)="editar()">Actualizar</button>
+      
+        <div class="row">
+          <div class="col">
+              <label for="id">ID: </label>
+              <br>
+              <input type="number" class="form-control"  [(ngModel)]="formulario.id" required>
+              <br>
+              <label for="nombre">Nombre: </label>
+              <br>
+              <input type="text" class="form-control"  [(ngModel)]="formulario.nombre"required>
+      
+              <br>
+              <label for="precio">Precio:  </label>
+              <br>
+              <input type="number" class="form-control"  [(ngModel)]="formulario.precio" required>
+              <br>
+              <br>
+              <button  class="btn btn-success" (click)="agregar()">Agregar</button>
+            <br>
+          </div>
         </div>
-      </div>
+      <br>
+      <button class="btn btn-info" (click)="editar()">Actualizar</button>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
